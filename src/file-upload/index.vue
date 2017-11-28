@@ -32,10 +32,29 @@ export default {
       type: Object
     },
     multiple: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     accept: {
       type: String
+    },
+    onProgress: {
+      type: Function,
+      default () {
+        return {}
+      }
+    },
+    onSuccess: {
+      type: Function,
+      default () {
+        return {}
+      }
+    },
+    onError: {
+      type: Function,
+      default () {
+        return {}
+      }
     }
   },
   methods: {
