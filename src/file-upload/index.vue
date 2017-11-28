@@ -1,13 +1,43 @@
 <template>
   <div class="file-upload">
-    <input class="file-upload-input" type="file" name="file" ref="input" @change="handleChange">
-    <button class="file-upload-btn" @click="$refs.input.click()">选择文件</button>
+    <input
+      class="file-upload-input"
+      type="file"
+      :name="name"
+      :multiple="multiple"
+      :accept="accept"
+      ref="input"
+      @change="handleChange"
+    >
+    <button
+      class="file-upload-btn"
+      @click="$refs.input.click()"
+    >选择文件</button>
   </div>
 </template>
 
 <script>
 import upload from './upload'
 export default {
+  props: {
+    action: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String,
+      default: 'file'
+    },
+    data: {
+      type: Object
+    },
+    multiple: {
+      type: Boolean
+    },
+    accept: {
+      type: String
+    }
+  },
   methods: {
     handleChange (e) {
       const files = e.target.files
@@ -16,7 +46,9 @@ export default {
         return
       }
 
-      upload(files)
+      upload.call(this, files)
+
+      this.$refs.input.value = null // 上传后清空文件
     }
   }
 }

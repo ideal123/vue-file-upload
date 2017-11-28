@@ -2,16 +2,19 @@
   <div id="app">
     <h1>vue-file-upload</h1>
     <div>
-      <file-upload></file-upload>
+      <FileUpload :action="url" :multiple="true"></FileUpload>
     </div>
   </div>
 </template>
 
 <script>
-import fileUpload from './file-upload'
+import FileUpload from './file-upload'
 export default {
   name: 'app',
-  components: { fileUpload }
+  components: { FileUpload },
+  data () {
+    return { url: 'http://dev-nfs.sf8cloud.com/upload/file' }
+  }
 }
 </script>
 
