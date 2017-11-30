@@ -1,6 +1,6 @@
 # vue-file-upload
 
-> A Vue.js project
+> A simple, lightweight fileupload component for vue2
 
 ## Build Setup
 

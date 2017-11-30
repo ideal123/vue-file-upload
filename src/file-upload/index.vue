@@ -1,5 +1,6 @@
 <template>
   <div class="file-upload">
+    <button class="file-upload-btn" @click="$refs.input.click()">选择文件</button>
     <input
       class="file-upload-input"
       type="file"
@@ -9,15 +10,12 @@
       ref="input"
       @change="handleChange"
     >
-    <button
-      class="file-upload-btn"
-      @click="$refs.input.click()"
-    >选择文件</button>
   </div>
 </template>
 
 <script>
 import upload from './upload'
+
 export default {
   props: {
     action: {

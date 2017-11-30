@@ -1,6 +1,6 @@
 {
   "name": "vue-file-upload",
-  "description": "A Vue.js project",
+  "description": "A simple, lightweight fileupload component for vue2",
   "version": "1.0.0",
   "author": "ideal123 <iseeucome@outlook.com>",
   "license": "MIT",
