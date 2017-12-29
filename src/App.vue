@@ -25,7 +25,7 @@ export default {
   components: { FileUpload },
   data () {
     return {
-      url: 'http://dev-nfs.sf8cloud.com/upload/file',
+      url: 'http://nfs.westo.club/upload',
       percent: 0
     }
   },
